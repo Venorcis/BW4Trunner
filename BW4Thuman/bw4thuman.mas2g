@@ -1,8 +1,8 @@
 use "bw4t-client-3.9.2-jar-with-dependencies.jar" as environment with 
 	clientip ="localhost", clientport="2000", 
 	serverip = "localhost", serverport = "8000", 
-	agentcount = "1", humancount = "1", launchgui = "false", 
-	goal = "true", goalhuman="true".
+	agentcount = "1", humancount = "1", speed = "100",
+	launchgui = "false", goal = "true", goalhuman = "true".
 
 define robot as agent {
 	use robotInit as init module.

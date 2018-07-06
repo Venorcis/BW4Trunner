@@ -29,6 +29,7 @@ public class Runner {
 	public void process(final MASProgram mas) throws IOException {
 		try {
 			final SingleRun run = new SingleRun(mas);
+			run.setDebuggerOutput(true);
 			run.run(true);
 			Thread.sleep(1000); // FIXME
 		} catch (final Exception e) {

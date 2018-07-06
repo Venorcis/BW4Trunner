@@ -7,6 +7,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import events.Channel;
+import events.Channel.ChannelState;
+import goal.preferences.DebugPreferences;
+import goal.preferences.LoggingPreferences;
 import goal.tools.Run;
 import languageTools.analyzer.FileRegistry;
 import languageTools.analyzer.mas.MASValidator;
@@ -57,6 +61,24 @@ public class BW4T {
 				}
 			}
 		}
+
+		// ------------------------------------------------------------
+		// Tweak the GOAL logging (i.e. only log executed actions to a file)
+		// ------------------------------------------------------------
+		LoggingPreferences.setLogToFile(true);
+		LoggingPreferences.setLogDirectory(working + File.separator + "logs");
+		for (Channel channel : Channel.values()) {
+			switch (channel) {
+			case ACTION_EXECUTED_BUILTIN:
+			case ACTION_EXECUTED_USERSPEC:
+				DebugPreferences.setChannelState(channel, ChannelState.VIEW);
+				break;
+			default:
+				DebugPreferences.setChannelState(channel, ChannelState.NONE);
+				break;
+			}
+		}
+
 		// ------------------------------------------------------------
 		// Run all the MASPrograms
 		// ------------------------------------------------------------
