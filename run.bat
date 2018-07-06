@@ -1,0 +1,1 @@
+java -cp target\testingBW4T-0.0.1-SNAPSHOT-shaded.jar goal.BW4Trunner.BW4T BW4Thuman
