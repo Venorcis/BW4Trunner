@@ -65,6 +65,7 @@ public class BW4T {
 		// ------------------------------------------------------------
 		// Tweak the GOAL logging (i.e. only log executed actions to a file)
 		// ------------------------------------------------------------
+		DebugPreferences.setDefault(Run.getDefaultPrefs());
 		LoggingPreferences.setLogToFile(true);
 		LoggingPreferences.setLogDirectory(working + File.separator + "logs");
 		for (Channel channel : Channel.values()) {
