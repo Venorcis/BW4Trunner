@@ -1,4 +1,4 @@
-use "bw4t-client-3.9.2-jar-with-dependencies.jar" as environment with 
+use "bw4t-client-3.9.3.jar" as environment with 
 	clientip ="localhost", clientport="2000", 
 	serverip = "localhost", serverport = "8000", 
 	agentcount = "1", humancount = "1", speed = "100",
