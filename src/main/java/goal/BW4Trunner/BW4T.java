@@ -27,7 +27,7 @@ public class BW4T {
 		// ------------------------------------------------------------
 		final String working = System.getProperty("user.dir");
 		final File bw4t = new File(working + File.separator + target);
-		final File client = new File(working + File.separator + "BW4T3" + File.separator + "bw4t-client-3.9.2.jar");
+		final File client = new File(working + File.separator + "BW4T3" + File.separator + "bw4t-client-3.9.3.jar");
 
 		// ------------------------------------------------------------
 		// Fetch all MAS2G files, and parse them into runnable MASPrograms

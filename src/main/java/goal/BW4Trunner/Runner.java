@@ -40,7 +40,7 @@ public class Runner {
 	private Process startServer() throws IOException {
 		// Create a command that starts a server in a separate Java process,
 		// and redirect its output and set the correct working directory.
-		final ProcessBuilder builder = new ProcessBuilder(new String[] { "java", "-jar", "bw4t-server-3.9.2.jar" });
+		final ProcessBuilder builder = new ProcessBuilder(new String[] { "java", "-jar", "bw4t-server-3.9.3.jar" });
 		builder.inheritIO();
 		builder.directory(this.working);
 		// Actually start the server
