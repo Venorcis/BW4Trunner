@@ -20,7 +20,9 @@ import languageTools.program.mas.MASProgram;
 
 public class BW4T {
 	public static void main(final String[] args) {
-		final String target = (args.length > 1) ? args[1] : "BW4Thuman";
+		final String target = (args.length > 0) ? args[0] : "BW4Thuman";
+		final int timeout = (args.length > 1) ? Integer.parseInt(args[1]) : 0;
+		final int repeats = (args.length > 2) ? Integer.parseInt(args[2]) : 1;
 
 		// ------------------------------------------------------------
 		// Find directories for the MAS2G and the JAR file
@@ -68,7 +70,7 @@ public class BW4T {
 		DebugPreferences.setDefault(Run.getDefaultPrefs());
 		LoggingPreferences.setLogToFile(true);
 		LoggingPreferences.setLogDirectory(working + File.separator + "logs");
-		for (Channel channel : Channel.values()) {
+		for (final Channel channel : Channel.values()) {
 			switch (channel) {
 			case ACTION_EXECUTED_BUILTIN:
 			case ACTION_EXECUTED_USERSPEC:
@@ -86,7 +88,7 @@ public class BW4T {
 		Runner runner = null;
 		try {
 			if (!programs.isEmpty()) {
-				runner = new Runner(client.getParentFile());
+				runner = new Runner(client.getParentFile(), timeout, repeats);
 			}
 			for (final String assignment : programs.keySet()) {
 				if (programs.containsKey(assignment)) {
